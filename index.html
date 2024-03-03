@@ -71,10 +71,12 @@
           position: "top-left"
         });
 
+		// Add the search widget
 		var searchWidget = new Search({
           view: view
         });
 
+		// Add the search widget to the bottom right corner of the view to avoid Add Record overlap
         view.ui.add(searchWidget, {
           position: "bottom-right"
         });
@@ -85,6 +87,7 @@
 		url: "https://services.arcgis.com/LBbVDC0hKPAnLRpO/arcgis/rest/services/survey123_d35c982f59eb4a289bd0978f5382efcb_results/FeatureServer" //Your item URL Goes Here
 		});
 
+		// Add the layer to the map
 		map.add(layer);
 	});
 
@@ -93,7 +96,7 @@
   </head>
   <body>
    <!-- hello world text to check if everything worked -->
-
+   
    <a href="https://survey123.arcgis.com/share/d35c982f59eb4a289bd0978f5382efcb"target="_blank" class="addRecordBtn">Add Record</a>
    
    <div id="viewDiv"></div>
