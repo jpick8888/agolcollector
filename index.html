@@ -24,7 +24,7 @@
 
 	<!-- Adding Modules -->
 	<script>
-		require([ "esri/Map", "esri/views/MapView", "esri/config", "esri/widgets/Locate", "esri/widgets/Search" ], (Map, MapView, esriConfig, Locate, Search) => {
+		require([ "esri/Map", "esri/views/MapView", "esri/config", "esri/widgets/Locate", "esri/widgets/Search", "esri/layers/FeatureLayer" ], (Map, MapView, esriConfig, Locate, Search, FeatureLayer) => {
 		 
 		
 		 esriConfig.apiKey = "AAPK6a0e40e0c7584766bd0465bfdf4e9c47A0l6-hh-vuT_78RTwWVul2CsxgjEGw0QVGUBaBJUYZ_C3oE3ps1rsei8uf5gB6HW";
@@ -58,6 +58,14 @@
         view.ui.add(searchWidget, {
           position: "top-right"
         });
+
+		// Create featurelayer from feature service 
+		const layer = new FeatureLayer({ 
+		// URL to the service 
+		url: "https://services.arcgis.com/LBbVDC0hKPAnLRpO/arcgis/rest/services/survey123_d35c982f59eb4a289bd0978f5382efcb_results/FeatureServer" //Your item URL Goes Here
+		});
+
+		map.add(layer);
 	});
 
 	</script>
